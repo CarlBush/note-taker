@@ -1,9 +1,10 @@
-const fs = require("fs/promises");
+const fs = require("fs");
+const path = require("path");
 
 function createNewNote(body, noteArray) {
     const note = body;
     noteArray.push(note);
-    fs.writeFileSync(path.join(__dirname, "../db/db.json"),
+    fs.writeFileSync(path.join(__dirname, "../db.json"),
     JSON.stringify({ note: noteArray}, null, 2)
     );
 };
