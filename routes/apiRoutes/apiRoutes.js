@@ -29,4 +29,19 @@ router.post("/", (req, res) => {
     res.json(newNote);
 });
 
+
+//DELETE
+// router.delete("/:id", (req, res) => {
+//     const found = db.some(data => data.id == req.params.id);
+    
+//     if(found){
+//         res.json({
+//             Message: "Note has been deleted", 
+//             db: db.filter(data => data.id !==req.params.id)
+//         });
+//     } else {
+//         res.status(400).json({ Message: `No notes with the id of ${req.params.id} found`})
+//     }
+// });
+
 module.exports = router;

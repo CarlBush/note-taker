@@ -15,6 +15,3 @@ app.use("/", htmlRouters);
 
 
 app.listen(PORT, () => console.log(`Server stared on port ${PORT}`));
-//  app.listen(3001, () => {
-//      console.log(`API server now on port ${PORT}!`);
-//    });
