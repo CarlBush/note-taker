@@ -1,6 +1,9 @@
 const path = require("path");
 const router = require("express").Router();
 const db = require("../../db/db.json");
+const { createNewNote } = require("../../db/lib/index")
+//const uuid = require("uuid");
+
 
 //RETRIEVES ALL DATA IN THE JSON FILE
 router.get("/", (req, res) => {
@@ -18,5 +21,12 @@ router.get("/:id", (req, res) => {
     };
 });
 
+//POST
+router.post("/", (req, res) => {
+    req.body.id = db.length.toString();
+    const newNote = createNewNote(req.body, db);
+    console.log(req.body);
+    res.json(newNote);
+});
 
 module.exports = router;
