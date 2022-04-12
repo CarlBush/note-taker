@@ -1,16 +1,16 @@
 const path = require("path");
 const router = require("express").Router();
 
-//SENDFILE INDEX.HTML TO ROOT OR (http://localhost:3001/ | FOR TESTING)
+//GET | SENDFILE "index.html" TO ROOT "/"
 router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../../public/index.html"))
 });
-//SEND FILE NOTES.HTML TO ROOT/NOTES OR  (http://localhost:3001/notes | FOR TESTING)
+//GET | SEND FILE "notes.html" TO PATH "/NOTES"
 router.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "../../public/notes.html"))
 });
 
-//IF PAGE DOESN'T EXIST DEFAULT BACK TO INDEX.HTML
+//GET | SENDFILE "index.html" IF PATH IS INCORRECT
 router.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../../public/index.html"))
 });

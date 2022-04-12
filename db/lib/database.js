@@ -3,7 +3,7 @@ const path = require("path");
 const db = require("../db.json");
 const uuid = require("uuid");
 
-//FUNCTION TO ENSURE 'db.json" IS SETUP AS AN ARRAY"note: []"
+//FUNCTION TO ENSURE 'db.json" IS SETUP AS AN OBJECT WITH PROPERTY OF "note" WITH AN ARRAY
 function initDb() {
     if(!db || !db.note || !Array.isArray(db.note)) {
         db = {note: []}
@@ -11,7 +11,7 @@ function initDb() {
     return db;
 };
 
-//CHECK TO SEE IF NOTE IS IN DATABASE
+//FUNCTION TO CHECK TO SEE IF ID IS EXISTS
 function hasNote(id) {
     initDb();
     return db.note.some(data => data.id == id);
@@ -26,7 +26,7 @@ function getNote(id) {
     return db.note.find(data => data.id == id);
 };
 
-//FUNCTION TO CREATE NEW UNIQUE ID AND PUSH INTO ARRAY
+//FUNCTION TO CREATE NEW UNIQUE ID THEN PUSH INTO ARRAY
 function createNewNote(note) {
     initDb();
     //req.body.id = db.length.toString();
@@ -52,6 +52,5 @@ function writeDb() {
         JSON.stringify(db, null, 2)
     );
 };
-
 
 module.exports = { createNewNote, deleteNote, hasNote, getNote, initDb };

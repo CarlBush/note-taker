@@ -1,3 +1,19 @@
 {
-  "note": []
+  "note": [
+    {
+      "title": "Note 1",
+      "text": "This is a test for note one",
+      "id": "b3d1f584-52a5-4e39-9b9f-72f4358058ad"
+    },
+    {
+      "title": "Note 2",
+      "text": "This is a test for note two",
+      "id": "49e45dde-018c-455f-a723-93778eb5f5b0"
+    },
+    {
+      "title": "Note 3",
+      "text": "Yes em note for note three",
+      "id": "5d79b1f5-8614-4e4c-95f9-fbebcfdafc43"
+    }
+  ]
 }
